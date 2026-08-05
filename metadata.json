@@ -1,0 +1,6 @@
+{
+  "name": "GoodOne",
+  "description": "Modern E-Commerce platform inspired by Flipkart featuring live search, cart & wishlist, order tracking, GST invoice generator, AI support assistant, multi-language support, and admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -23,6 +23,9 @@ const mobileUpdates = [
 ];
 
 export const MobileUpdates: React.FC = () => {
+const handleViewUpdate = (brand: string) => {
+  alert(`Latest ${brand} mobile updates coming soon!`);
+};
   return (
     <section className="space-y-4">
       <div className="flex items-center justify-between">
@@ -63,7 +66,10 @@ export const MobileUpdates: React.FC = () => {
               {mobile.description}
             </p>
 
-            <button className="mt-4 flex items-center gap-2 text-sm font-black">
+            <button
+  onClick={() => handleViewUpdate(mobile.brand)}
+  className="mt-4 flex items-center gap-2 text-sm font-black"
+>
               View Update
               <ArrowRight className="w-4 h-4" />
             </button>

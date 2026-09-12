@@ -5,7 +5,6 @@ const mobileUpdates = [
   {
     brand: 'Samsung',
     model: 'Samsung Galaxy S25',
-    image: 'https://images.samsung.com/is/image/samsung/p6pim/in/sm-s931bzvcins/gallery/in-galaxy-s25-s931-sm-s931bzvcins-thumb-544315583',
     price: '₹74,999',
     launch: '2025',
     processor: 'Snapdragon 8 Elite',
@@ -15,7 +14,6 @@ const mobileUpdates = [
   {
     brand: 'Vivo',
     model: 'Vivo V50',
-    image: 'https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1739248196077/0b1a7f3b5c6e4d5a9b8c7d6e5f4a3b2c.png',
     price: '₹34,999',
     launch: '2025',
     processor: 'Snapdragon 7 Gen 3',
@@ -25,7 +23,6 @@ const mobileUpdates = [
   {
     brand: 'Redmi',
     model: 'Redmi Note 14 Pro',
-    image: 'https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-14-pro/section01.png',
     price: '₹24,999',
     launch: '2025',
     processor: 'MediaTek Dimensity',
@@ -59,11 +56,9 @@ const handleViewUpdate = (brand: string) => {
             key={mobile.brand}
             className="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-800"
           >
-            <img
-  src={mobile.image}
-  alt={mobile.model}
-  className="w-full h-48 object-contain rounded-2xl bg-slate-100 dark:bg-slate-800 mb-4"
-/>
+            <div className="w-full h-48 flex items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 mb-4">
+  <Smartphone className="w-20 h-20 opacity-40" />
+</div>
             <div className="flex items-center gap-3 mb-3">
               <div className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800">
                 <Smartphone className="w-6 h-6" />

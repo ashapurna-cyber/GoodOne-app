@@ -1,5 +1,5 @@
 import React from 'react';
-import { Smartphone, ArrowRight } from 'lucide-react';
+import { Smartphone, ArrowRight, X } from 'lucide-react';
 
 const mobileUpdates = [
   {
@@ -23,8 +23,9 @@ const mobileUpdates = [
 ];
 
 export const MobileUpdates: React.FC = () => {
+const [selectedBrand, setSelectedBrand] = React.useState<string | null>(null);
 const handleViewUpdate = (brand: string) => {
-  alert(`Latest ${brand} mobile updates coming soon!`);
+  setSelectedBrand(brand);
 };
   return (
     <section className="space-y-4">
@@ -76,6 +77,40 @@ const handleViewUpdate = (brand: string) => {
           </div>
         ))}
       </div>
+{selectedBrand && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+    <div className="w-full max-w-md rounded-3xl bg-white dark:bg-slate-900 p-6 shadow-2xl">
+      
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-black">
+          📱 {selectedBrand} Mobile Updates
+        </h2>
+
+        <button
+          onClick={() => setSelectedBrand(null)}
+          className="rounded-full p-2 hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <X className="w-5 h-5" />
+        </button>
+      </div>
+
+      <div className="mt-5 space-y-3">
+        <p>📱 Latest mobile launches</p>
+        <p>💰 Latest prices</p>
+        <p>⚙️ Android/software updates</p>
+        <p>📷 Camera and specifications</p>
+        <p>🔋 Battery information</p>
+      </div>
+
+      <button
+        onClick={() => setSelectedBrand(null)}
+        className="mt-6 w-full rounded-xl bg-slate-900 px-4 py-3 font-bold text-white dark:bg-white dark:text-slate-900"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
     </section>
   );
 };

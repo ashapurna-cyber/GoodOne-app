@@ -14,6 +14,7 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { AIChatbot } from './components/AIChatbot';
 import { AuthModal } from './components/AuthModal';
 import { Footer } from './components/Footer';
+import { MobileUpdates } from './components/MobileUpdates';
 import { CheckCircle, Info, AlertCircle } from 'lucide-react';
 
 const MainAppContent: React.FC = () => {
@@ -29,12 +30,15 @@ const MainAppContent: React.FC = () => {
         {currentView === 'home' && (
           <>
             <HeroCarousel
-              onCategorySelect={(cat) => {
-                setFilterState((prev) => ({ ...prev, category: cat, searchQuery: '' }));
-                setCurrentView('home');
-              }}
-            />
-            <ProductGrid />
+  onCategorySelect={(cat) => {
+    setFilterState((prev) => ({ ...prev, category: cat, searchQuery: '' }));
+    setCurrentView('home');
+  }}
+/>
+
+<MobileUpdates />
+
+<ProductGrid />
           </>
         )}
 
